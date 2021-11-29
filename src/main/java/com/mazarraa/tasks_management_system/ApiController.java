@@ -35,11 +35,11 @@ public class ApiController {
 	}
 
 	@GetMapping("/task/{t_id}")
-	private String getTasks(@PathVariable("t_id") int t_id) {
+	private TaskModel getTasks(@PathVariable("t_id") int t_id) {
 		try {
-			return task_service.getTasksById(t_id).toString();
+			return task_service.getTasksById(t_id);
 		} catch (Exception e) {
-			return e.toString();
+			return null;
 		}
 	}
 

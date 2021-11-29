@@ -1,0 +1,12 @@
+POST http://localhost:8080/api/task
+content-type: application/json
+
+{
+    "t_id": 12,
+    "t_name": "test",
+    "t_time_spent": 12,
+    "t_group": 12,
+    "t_assignee": 12,
+    "t_parent_id": 12,
+    "t_status": 12
+}

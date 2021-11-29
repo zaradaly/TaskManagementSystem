@@ -19,7 +19,7 @@
             <a href="#run">How to Run the project</a>
         </li>
         <li>
-            <a href="#call-endpoints">Call the Endpoints</a>
+            <a href="#endpoints">Call the Endpoints</a>
         </li>
     </ol>
 </details>
@@ -80,10 +80,13 @@ mvnw spring-boot:run
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Endpoints
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos
-work well in this space. You may also link to more resources.
+Examples of Endpoint Calls :
+Localhost url : {hosturl} = "localhost:8080/api"
+
+- Get all tasks :
+![GET ALL TASKS](https://github.com/zaradaly/TaskManagementSystem/blob/main/screenshots/Get_tasks.jpg)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 

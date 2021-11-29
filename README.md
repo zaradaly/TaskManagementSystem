@@ -86,6 +86,9 @@ Examples of Endpoint Calls :
 Localhost url : {hosturl} = "localhost:8080/api"
 
 - Get all tasks :
+You just need to send a GET request the the _{hosturl}/task_.
+The result will be the list of all Tasks currently stored in the H2 database, as show in the picture below : 
+
 ![GET ALL TASKS](https://github.com/zaradaly/TaskManagementSystem/blob/main/screenshots/Get_tasks.jpg)
 
 _For more examples, please refer to the [Documentation](https://example.com)_

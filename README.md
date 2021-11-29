@@ -52,7 +52,7 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 1. You need to install JDK11 and add it to your PATH variable. [https://www.javatpoint.com/how-to-set-path-in-java](https://www.javatpoint.com/how-to-set-path-in-java)
-2. Clone the project file from the [GitHub repository]()
+2. Clone the project file from the [GitHub repository](https://github.com/zaradaly/TaskManagementSystem.git)
 
 ```sh
 git clone https://github.com/zaradaly/TaskManagementSystem.git

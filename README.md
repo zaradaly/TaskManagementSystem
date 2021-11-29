@@ -103,7 +103,7 @@ The result will be if the Task under the Id specified in the url was Terminated 
 
 ![GET ALL TASKS](https://github.com/zaradaly/TaskManagementSystem/blob/main/screenshots/Terminate_task_byId.jpg)
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please download the ![Postman Collection File](https://github.com/zaradaly/TaskManagementSystem/blob/main/postman_collection.json)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

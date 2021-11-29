@@ -56,21 +56,24 @@ To get a local copy up and running follow these simple steps.
 
 ```sh
 git clone https://github.com/zaradaly/TaskManagementSystem.git
-
+```
 
 ### Compile
 1. Clean the project
 ```sh
 mvnw clean
+```
 2. Compile the project
 ```sh
 mvnw compile
+```
 
 
 ### Run
 1. This last command will run the application.
 ```sh
 mvnw spring-boot:run
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

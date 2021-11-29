@@ -91,11 +91,17 @@ The result will be the list of all Tasks currently stored in the H2 database, as
 
 ![GET ALL TASKS](https://github.com/zaradaly/TaskManagementSystem/blob/main/screenshots/Get_tasks.jpg)
 
-- Get task by Id :
+- Get Task by Id :
 Send a GET request the the _{hosturl}/task/{id}_.
 The result will be the Task under the Id specified in the url which is currently stored in the H2 database, as show in the picture below : 
 
 ![GET ALL TASKS](https://github.com/zaradaly/TaskManagementSystem/blob/main/screenshots/Get_task_byId.jpg)
+
+- Terminate Task :
+Send a GET request the the _{hosturl}/terminateTask/{id}_.
+The result will be if the Task under the Id specified in the url was Terminated or Not Able to be Terminated, which means that it has Children tasks that are still being processed, as show in the picture below : 
+
+![GET ALL TASKS](https://github.com/zaradaly/TaskManagementSystem/blob/main/screenshots/Terminate_task_byId.jpg)
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 

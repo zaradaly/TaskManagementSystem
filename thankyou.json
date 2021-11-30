@@ -1,0 +1,11 @@
+{
+	"to": {
+		"name": "Mr Krists"
+	},
+	"subject": {
+		"text": "Thank you for the opprtunity"
+	},
+	"body": {
+		"text": "Good day Mr Krists,\n I hope you are doing well. \n I am writing to thank you for your opportunity to join our team. \n\n As we had the previous meeting, I had no idea what Spring boot was or how it worked, but I was able to install it on my local machine and run it on my local machine. \n I also didn't know about the in-memory database as the H2, but I was able to get it to work. As I usually use the MySql or MangoDB, or just use a Global variable to store any volatile data. \n This was a project that really took me out of my confort zone and experiment with a new Framework. It was not very fun, to be honest, but very rewarding in a personal developping way. \n Have a great day, \n MohamedAli Zarraa"
+	}
+}

@@ -59,11 +59,11 @@ git clone https://github.com/zaradaly/TaskManagementSystem.git
 ```
 
 ### Compile
-1. Clean the project
+1. Clean the project (optional)
 ```sh
 mvnw clean
 ```
-2. Compile the project
+2. Compile the project (optional)
 ```sh
 mvnw compile
 ```

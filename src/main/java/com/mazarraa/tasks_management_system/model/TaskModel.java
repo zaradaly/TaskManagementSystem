@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -14,7 +15,8 @@ import javax.persistence.Table;
 public class TaskModel {
     @Id
     @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "task_id_seq", sequenceName = "task_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "task_id_seq")
     private int t_id;
     @Column
     private String t_name;
@@ -30,18 +32,12 @@ public class TaskModel {
     // For this example, status 1 = task is running, 0 = task is done
     private int t_status;
 
+    // Default constructor with no parameters
     public TaskModel(){
         super();
-    //     Random rand = new Random();
-    //     this.t_id = rand.nextInt(5000)+1;
-    //     // this.t_name = "noname";
-    //     // this.t_time_spent = 0;
-    //     // this.t_group = 0;
-    //     // this.t_assignee = 0;
-    //     // this.t_parent_id = 0;
-    //     // this.t_status = 0;
     }
 
+    // Constructor with parameters
     TaskModel(int t_id, String t_name, int t_time_spent, int t_group, int t_assignee, int t_parent_id, int t_status) {
         this.t_id = t_id;
         this.t_name = t_name;
@@ -52,6 +48,7 @@ public class TaskModel {
         this.t_status = t_status;
     }
 
+    // Getters and Setters
     public String toString(){
         return "Task : [t_id=" + t_id + ", t_name=" + t_name + ", t_time_spent=" + t_time_spent + ", t_group=" + t_group + ", t_assignee=" + t_assignee + ", t_parent_id=" + t_parent_id + ", t_status=" + t_status + "]";
     }

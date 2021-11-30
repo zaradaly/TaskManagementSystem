@@ -34,21 +34,23 @@ public class TaskService {
         taskRepository.save(tasks);
     }
 
-    public boolean has_active_children(int parent_id) {
+    public boolean terminate_task(int t_id) {
+        TaskModel parentTask = taskRepository.findById(t_id).get();
         List<TaskModel> tasks = new ArrayList<TaskModel>();
         taskRepository.findAll().forEach(
                 task -> {
-                    // if task is child of parent and is active
-                    if ( (task.get_t_parent_id() == parent_id) && (task.get_t_status() == 1) ) {
+                    // if task is child and is active, add it to the list
+                    if ( (task.get_t_parent_id() == t_id) && (task.get_t_status() == 1) ) {
                         tasks.add(task);
                     }
                 });
-        return (tasks.size() > 0 );
-    }
-
-    public void terminate_task(int t_id) {
-        TaskModel task = taskRepository.findById(t_id).get();
-        task.set_t_status(0);
-        taskRepository.save(task);
+        // if the list is empty, then there are no active children => terminate parent task
+        // if the list is not empty, then there are active children -> do not terminate parent task
+        if (tasks.size() == 0 ) {
+            parentTask.set_t_status(0);
+            taskRepository.save(parentTask);
+            return true;
+        }
+        return false;
     }
 }

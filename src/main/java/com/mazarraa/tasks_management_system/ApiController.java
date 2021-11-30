@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+// Map all the API Endpoints under the path "/api"
 @RequestMapping("/api")
 public class ApiController {
 
@@ -29,11 +29,13 @@ public class ApiController {
 		return "Hello World";
 	}
 
+	// Map the API Endpoint GET from "/api/task" to the method "getAllTasks"
 	@GetMapping("/task")
 	private List<TaskModel> getAllTasks() {
 		return task_service.getAllTasks();
 	}
 
+	// Map the API Endpoint GET from "/api/task/{t_id}" to the method "getTasksById"
 	@GetMapping("/task/{t_id}")
 	private TaskModel getTasks(@PathVariable("t_id") int t_id) {
 		try {
@@ -43,12 +45,14 @@ public class ApiController {
 		}
 	}
 
+	
 	@PostMapping(value = "/task", consumes = MediaType.APPLICATION_JSON_VALUE)
 	private int addTask(@RequestBody TaskModel task) {
 		task_service.saveOrUpdate(task);
 		return task.get_t_id();
 	}
 
+	// Map the API Endpoint POST from "/api/task" to the method "addTask"
 	@PostMapping(path = "/addTask", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	private String saveTask(@RequestBody TaskModel tasks) {
 		try {
@@ -61,11 +65,13 @@ public class ApiController {
 		}
 	}
 
+	// Map the API Endpoint DELETE "/api/task/{t_id}" to the method "deleteTask"
 	@DeleteMapping("/task/{t_id}")
 	private void deleteTask(@PathVariable("t_id") int t_id) {
 		task_service.delete(t_id);
 	}
 
+	// Map the API Endpoint PUT from "/api/task" to the method "updateTask"
 	@PutMapping("/task")
 	private TaskModel update(@RequestBody TaskModel tasks) {
 		try {
@@ -76,13 +82,16 @@ public class ApiController {
 		}
 	}
 
+	// Map the API Endpoint GET from "/api/task/{t_id}" to the method "terminateTask"
+	// This method will check if the task has active children or not
+	// If there are active children, it will not be terminated unless all the children are terminated
+	// Else, it will be terminated
 	@GetMapping("/terminateTask/{t_id}")
 	private String terminateTask(@PathVariable("t_id") int t_id) {
-		if (task_service.has_active_children(t_id)) {
-			return "Task has active subtasks, cannot be terminated!";
-		} else {
-			task_service.terminate_task(t_id);
+		if (task_service.terminate_task(t_id)) {
 			return "Task Terminated.";
+		} else {
+			return "Task has active subtasks, cannot be terminated!";
 		}
 	}
 
